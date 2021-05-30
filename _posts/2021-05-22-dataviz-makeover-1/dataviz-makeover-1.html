@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/image/image1.jpg","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","image/image1.jpg","image/image2.jpg"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/image/image1.jpg","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","image/Bar_1.png","image/Bar_2.png","image/Bar_3.png","image/Bar_4.png","image/Bar_5.png","image/Bar_6.png","image/Bar_7.png","image/Bar_8.png","image/Bar_9.png","image/cleaned_vars.png","image/Dashboard.png","image/Dashboard_2.png","image/Data_prep_1.png","image/Data_prep_2.png","image/Data_prep_3.png","image/data_vis_pic1.jpg","image/Edit_relationship.png","image/Export+Import.png","image/image1.jpg","image/image2.jpg","image/Pie_1.png","image/Pie_2.png","image/Pie_3.png","image/Pie_4.png","image/Pie_5.png","image/Ranking_data.png","image/Sketch.jpg","image/Tableau.png","image/Trade Deficit.png","image/Trade Surplus.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1477,37 +1477,62 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h1 id="overview">1.0 Overview</h1>
-<p>In this article, we will show you how to plot a figure with multiple histograms by using <a href="https://ggplot2.tidyverse.org/"><strong>ggplot2</strong></a> and <strong>ggpubr</strong> packages.</p>
-<h1 id="installing-and-launching-r-packages">2.0 Installing and Launching R Packages</h1>
-<p>Before you get started, you are required:</p>
+<h1 id="making-over-a-chart-from-merchandise-trade-by-regionmarket-data.">Making over a chart from Merchandise Trade by Region/Market Data.</h1>
+<h3 id="explore-different-perspectives-and-approaches-to-design-more-truthful-and-enlightening-data-visualisation">Explore different perspectives and approaches to design more truthful and enlightening data visualisation</h3>
+<p><img src="image/data_vis_pic1.jpg" /></p>
+<h2 id="task-1-critic-the-graph-from-both-its-clarity-and-aesthetics.-at-least-three-from-each-evaluation-criterion.">Task 1: Critic the graph from both its clarity and aesthetics. At least three from each evaluation criterion.</h2>
 <ul>
-<li>to start a new R project, and
+<li>clarity:
 <ul>
-<li>to create a new R Markdown document.</li>
+<li>Title is not precise: Given the title “Merchandise Trade of Top Six Trading Countries,2019-2020”, there is no clear explanation of what does “top” means, and How the ranking is given.</li>
+<li>Given a large amount of countries and time scale over 30 years, only 3 years data is provided in the demonstration no further demonstration can be adopted.</li>
+<li>For Import and Export of y-axis, the scale is not same for import and export which means in the given visualization, Import Volume and Export Volume cannot be compared with each other, also, for users it add difficulties to compare the difference of import and export patern between countries.</li>
+</ul></li>
+<li>Aesthetics:
+<ul>
+<li>Chart title’s font size: Font size of title should be bigger than the commentary so readers will be easily distinguish the topic of charts</li>
+<li>Area chart might not be the most appropriate demonstration method: Although area chart is ideal for demonstrating the time series of Import and Export data, it doesn’t fit people’s thinking patterns of understanding the Import and export balance.In this case a Bar chart will be more adequate.
+<ul>
+<li>The time scale of the x-axis(Month of Period) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.</li>
+</ul></li>
 </ul></li>
 </ul>
-<p>Figure below shows the quadrat plot of Tableau.</p>
-<p><img src="image/image1.jpg" /></p>
-<p><img src="image/image2.jpg" /></p>
-<p>Next, you will use the code chunk below to install and launch ggpubr and tidyverse in RStudio.</p>
-<h1 id="r-code">R code</h1>
-<p>packages = c(‘ggpubr’, ‘tidyverse’)</p>
-<p>for(p in packages){library if(!require(p, character.only = T)){ install.packages(p) } library(p, character.only = T) }</p>
-<h1 id="importing-and-preparing-the-data-set">3.0 Importing and Preparing The Data Set</h1>
-<p>In this hands-on exercise, the <a href="https://archive.ics.uci.edu/ml/datasets/wine+quality">Wine Quality Data Set</a> of UCI Machine Learning Repository will be used. The data set consists of 13 variables and 6497 observations. For the purpose of this exercise, we have combined the red wine and white wine data into one data file. It is called wine_quality and is in csv file format.</p>
-<h2 id="importing-data">3.1 Importing Data</h2>
-<p>First, let us import the data into R by using read_csv() of readr package.</p>
-<h1 id="r-code-1">R code</h1>
-<p>wine &lt;- read_csv(“data/wine_quality.csv”)</p>
-<p>Notice that beside quality and type, the rest of the variables are numerical and continuous data type.</p>
-<h1 id="univariate-eda-with-histogram">4.0 Univariate EDA with Histogram</h1>
-<p>In the figure below, multiple histograms are plottted by using ggplot() and geom_histogram() of ggplot2 package. Then, ggarrange() of ggpubr package is used to patch these histogram into a single figure to reveal the distribution of the selected variables in the wine quality data sets.</p>
-<h1 id="rcode">Rcode</h1>
-<p>fa &lt;- ggplot(data=wine, aes(x= <code>fixed acidity</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) va &lt;- ggplot(data=wine, aes(x= <code>volatile acidity</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) ca &lt;- ggplot(data=wine, aes(x= <code>citric acid</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) rs &lt;- ggplot(data=wine, aes(x= <code>residual sugar</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) ch &lt;- ggplot(data=wine, aes(x= <code>chlorides</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) fSO2 &lt;- ggplot(data=wine, aes(x= <code>free sulfur dioxide</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) tSO2 &lt;- ggplot(data=wine, aes(x= <code>total sulfur dioxide</code>)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) density &lt;- ggplot(data=wine, aes(x= density)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) pH &lt;- ggplot(data=wine, aes(x= pH)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) sulphates &lt;- ggplot(data=wine, aes(x= sulphates)) + geom_histogram(bins=20, color=“black”, fill=“light blue”) alcohol &lt;- ggplot(data=wine, aes(x= alcohol)) + geom_histogram(bins=20, color=“black”, fill=“light blue”)</p>
-<p>ggarrange(fa, va, ca, rs, ch, fSO2, tSO2, density, pH, sulphates, alcohol, ncol = 4, nrow = 3)</p>
-<p>Distill is a publication format for scientific and technical writing, native to the web.</p>
-<p>Learn more about using Distill at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
+<h2 id="task-2-alternative-graphical-presentation-to-improve-the-current-design.">Task 2: Alternative graphical presentation to improve the current design.</h2>
+<p>The proposed design is sketched as picture below: <img src="image/Sketch.jpg" /></p>
+<ul>
+<li>Design Introduction:
+<ul>
+<li><p>From the proposed design I proposed two charts, the first one is Pie Chart which is able to help users to find the percentage of the total import and export volume of each country in all countries over the years, a ranking of countries is calculated using the sum of Import and Export.Users are able to manually adjust time scale and select countries.</p></li>
+<li><p>The second chart is a Bar chart provides details of Import and Export data, users can manually adjust the Time scale and countries that are intended to be compared. Trade Surplus and Trade Deficit are also calculated and demonstrated using Tooltip.</p></li>
+</ul></li>
+<li>Advantages:
+<ul>
+<li>Flexibility: In this design, charts are manually adjustable, given that users may choose any time slots and any combination of countries.</li>
+<li>Easiness to compare between countries.</li>
+<li>Clear data details using Tolltip.</li>
+</ul></li>
+</ul>
+<h2 id="task-3-data-visualization-designed-using-tableau">Task 3: Data visualization designed using Tableau</h2>
+<p><img src="image/Tableau.png" /></p>
+<h2 id="task-4-step-by-step-description-on-data-visualization-preparation.">Task 4: Step-by-step description on data visualization preparation.</h2>
+<h3 id="data-preparation">4.1 Data preparation</h3>
+<p>Drag the data file into tableau and drag T1 to table area <img src="image/Data_prep_1.png" /> Tick Use data interpreter and choose import data from Jan 1976 to April 2021 and right click chose pivot. <img src="image/Data_prep_2.png" /> <img src="image/Data_prep_3.png" /> Change variable names into “Year” ”Import”, and change data type of “Year” into Date; Drag T2 into data area and repeat same steps for T2, variable names are changed into “Year(T2)” and “Export”;</p>
+<p>Click on the connect line of T1 and T2, edit relation ships as picture shown: <img src="image/Edit_relationship.png" /></p>
+<p>The final outcome will be like:</p>
+<p><img src="image/cleaned_vars.png" /> Calculate Trade Deficit and Trade Surplus using <strong>Analysis-&gt;Create Calculated field…</strong> <img src="image/Trade%20Deficit.png" /> <img src="image/Trade%20Surplus.png" /> <img src="image/Ranking_data.png" /> <img src="image/Export+Import.png" /></p>
+<h3 id="create-pie-chart">4.2 Create Pie Chart</h3>
+<p>In the Marks card, select Pie from the drop down menu. Drag Export+Import Values to Size. Drag Countries Values to Color. <img src="image/Pie_1.png" /></p>
+<p>Drag Year and Countries into Filter, right click on the Marks card and select Edit Filter <img src="image/Pie_2.png" /> Drag a specific measure to Tooltip to the pie chart.Double click on tooltip and edit as following picture. <img src="image/Pie_3.png" /> Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture <img src="image/Pie_4.png" /> Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter. And the outcome will be as is shown in picture followed. <img src="image/Pie_5.png" /></p>
+<h3 id="create-bar-chart">4.3 Create Bar Chart</h3>
+<p>Drag Year to Columns, drag Countries and Import to Rows <img src="image/Bar_1.png" /> Drag Export to the right edge of Chart <img src="image/Bar_2.png" /></p>
+<p>Change Marks into Bars and edit y-axis by right click on it, change the Scale to fixed for both Import and Export as is shown in picture. <img src="image/Bar_3.png" /> Drag Year and Countries into filter and change the format of Year into Month fot both Year in column and in filter. <img src="image/Bar_4.png" /> Drag Trade Surplus and Trade Deficit into Tooltip, double click on Tooltip and edit as following picture, note that change color of Surplus to blue and Deficit to red. <img src="image/Bar_5.png" /> Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture <img src="image/Bar_6.png" /> <img src="image/Bar_7.png" /> Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter. Change the format of x-axis into solid and black lines to enable a better and clear view.Edit in <strong>Axis-&gt; Scale-&gt; Ticks</strong> and as is shown in picture below. <img src="image/Bar_9.png" /> And the outcome will be as is shown in picture followed. <img src="image/Bar_8.png" /> ### 4.3 Create Bar Chart In order to illustrate two graph in the same time we use dashboard.Click on the dashboard and drag sheets into intended plave and re-order until satisfied. <img src="image/Dashboard.png" /></p>
+<p>After satisfied click on <strong>Server-&gt;Tableau Public-&gt;Save to Tableau Public…</strong> <img src="image/Dashboard_2.png" /></p>
+<h2 id="task-5-major-observations">Task 5: Major observations</h2>
+<ul>
+<li>For Developing countries like China and Malaysia, usually have higher Export volume than Import Volume.</li>
+<li>For Developed countries and regions like Japan and United States, usually the Export volume lower than Import Volume.</li>
+<li>Hongkong is very interesting since it have a really high Trade Surplus, there could because Hong Kong is an channel for Chinese exports.</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

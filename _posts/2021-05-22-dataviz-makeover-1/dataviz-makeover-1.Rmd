@@ -12,90 +12,112 @@ output:
 ---
 
 
-# 1.0 Overview
+# Making over a chart from Merchandise Trade by Region/Market Data.
+### Explore different perspectives and approaches to design more truthful and enlightening data visualisation
 
-In this article, we will show you how to plot a figure with multiple histograms by using [**ggplot2**](https://ggplot2.tidyverse.org/) and **ggpubr** packages. 
+![](image\data_vis_pic1.jpg)
 
+## Task 1: Critic the graph from both its clarity and aesthetics. At least three from each evaluation criterion. 
+* clarity:
+  * Title is not precise: Given the title "Merchandise Trade of Top Six Trading Countries,2019-2020", there is  no clear explanation of what does "top" means, and How the ranking is given.
+  * Given a large amount of countries and time scale over 30 years, only 3 years data is provided in the demonstration no further demonstration can be adopted.
+  * For Import and Export of y-axis, the scale is not same for import and export which means in the given visualization, Import Volume and Export Volume cannot be compared with each other, also, for users it add difficulties to compare the difference of import and export patern between countries.
+  
+* Aesthetics:
+  * Chart title’s font size: Font size of title should be bigger than the commentary so readers will be easily distinguish the topic of charts
+  * Area chart might not be the most appropriate demonstration method: Although area chart is ideal for demonstrating the time series of Import and Export data, it doesn't fit people's thinking patterns of understanding the Import and export balance.In this case a Bar chart will be more adequate.
+    * The time scale of the x-axis(Month of Period) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.
+  
+## Task 2: Alternative graphical presentation to improve the current design. 
+The proposed design is sketched as picture below:
+![](image\Sketch.jpg)
 
-# 2.0 Installing and Launching R Packages
+* Design Introduction:
+  * From the proposed design I proposed two charts, the first one is Pie Chart which is able to help users to find the percentage of the total import and export volume of each country in all countries over the years, a ranking of countries is calculated using the sum of Import and Export.Users are able to manually adjust time scale and select countries.
 
-Before you get started, you are required:
+  * The second chart is a Bar chart provides details of Import and Export data, users can manually adjust the Time scale and countries that are intended to be compared. Trade Surplus and Trade Deficit are also calculated and demonstrated using Tooltip.
 
-* to start a new R project, and
-  * to create a new R Markdown document.
-
-Figure below shows the quadrat plot of Tableau.
-
-![](image\image1.jpg)
-
-![](image\image2.jpg)
-
-Next, you will use the code chunk below to install and launch ggpubr and tidyverse in RStudio.
-
-# R code 
-packages = c('ggpubr', 'tidyverse')
-
-for(p in packages){library
-  if(!require(p, character.only = T)){
-    install.packages(p)
-  }
-  library(p, character.only = T)
-}
-
-
-# 3.0 Importing and Preparing The Data Set 
-
-In this hands-on exercise, the [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/wine+quality) of UCI Machine Learning Repository will be used.  The data set consists of 13 variables and 6497 observations.  For the purpose of this exercise, we have combined the red wine and white wine data into one data file.  It is called wine_quality and is in csv file format.  
+* Advantages:
+  * Flexibility: In this design, charts are manually adjustable, given that users may choose any time slots and any combination of countries.
+  * Easiness to compare between countries.
+  * Clear data details using Tolltip.
 
 
-## 3.1 Importing Data
-
-First, let us import the data into R by using read_csv() of readr package.  
-
-
-# R code
-wine <- read_csv("data/wine_quality.csv")
+## Task 3: Data visualization designed using Tableau
+  ![](image\Tableau.png)
 
 
-Notice that beside quality and type, the rest of the variables are numerical and continuous data type. 
+## Task 4: Step-by-step description on data visualization preparation. 
+
+### 4.1 Data preparation
+
+Drag the data file into tableau and drag T1 to table area
+![](image\Data_prep_1.png)
+Tick Use data interpreter and choose import data from Jan 1976 to April 2021 and right click chose pivot.
+![](image\Data_prep_2.png)
+![](image\Data_prep_3.png)
+Change variable names into “Year” ”Import”, and change data type of “Year” into Date;
+Drag T2 into data area and repeat same steps for T2, variable names are changed into “Year(T2)” and “Export”;
+
+Click on the connect line of T1 and T2, edit relation ships as picture shown:
+  ![](image\Edit_relationship.png)
+
+The final outcome will be like:
+  
+  ![](image\cleaned_vars.png)
+Calculate Trade Deficit and Trade Surplus using **Analysis->Create Calculated field...**
+  ![](image\Trade Deficit.png)
+  ![](image\Trade Surplus.png)
+  ![](image\Ranking_data.png)
+  ![](image\Export+Import.png)
 
 
-# 4.0 Univariate EDA with Histogram
+### 4.2 Create Pie Chart
+In the Marks card, select Pie from the drop down menu.
+Drag Export+Import Values to Size.
+Drag Countries Values to Color.
+  ![](image\Pie_1.png)
 
-In the figure below, multiple histograms are plottted by using ggplot() and geom_histogram() of ggplot2 package.  Then, ggarrange() of ggpubr package is used to patch these histogram into a single figure to reveal the distribution of the selected variables in the wine quality data sets.  
+Drag Year and Countries into Filter, right click on the Marks card and select Edit Filter
+  ![](image\Pie_2.png)
+Drag a specific measure to Tooltip to the pie chart.Double click on tooltip and edit as following picture.
+  ![](image\Pie_3.png)
+Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture
+  ![](image\Pie_4.png)
+Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter.
+And the outcome will be as is shown in picture followed.
+  ![](image\Pie_5.png)
 
-# Rcode
-fa <- ggplot(data=wine, aes(x= `fixed acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-va <- ggplot(data=wine, aes(x= `volatile acidity`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ca <- ggplot(data=wine, aes(x= `citric acid`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-rs <- ggplot(data=wine, aes(x= `residual sugar`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-ch <- ggplot(data=wine, aes(x= `chlorides`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-fSO2 <- ggplot(data=wine, aes(x= `free sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-tSO2 <- ggplot(data=wine, aes(x= `total sulfur dioxide`)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-density <- ggplot(data=wine, aes(x= density)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-pH <- ggplot(data=wine, aes(x= pH)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-sulphates <- ggplot(data=wine, aes(x= sulphates)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
-alcohol <- ggplot(data=wine, aes(x= alcohol)) +
-  geom_histogram(bins=20, color="black", fill="light blue")
+### 4.3 Create Bar Chart
+Drag Year to Columns, drag Countries and Import to Rows
+  ![](image\Bar_1.png)
+Drag Export to the right edge of Chart
+  ![](image\Bar_2.png)
 
-ggarrange(fa, va, ca, rs, ch, fSO2, tSO2, density, pH, sulphates, alcohol, 
-          ncol = 4, nrow = 3)
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+Change Marks into Bars and edit y-axis by right click on it, change the Scale to fixed for both Import and Export as is shown in picture.
+  ![](image\Bar_3.png)
+Drag Year and Countries into filter and change the format of Year into Month fot both Year in column and in filter.
+  ![](image\Bar_4.png)
+Drag Trade Surplus and Trade Deficit into Tooltip, double click on Tooltip and edit as following picture, note that change color of Surplus to blue and Deficit to red.
+  ![](image\Bar_5.png)
+Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture
+  ![](image\Bar_6.png)
+    ![](image\Bar_7.png)
+Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter.
+Change the format of x-axis into solid and black lines to enable a better and clear view.Edit in **Axis-> Scale-> Ticks** and as is shown in picture below.
+    ![](image\Bar_9.png)
+And the outcome will be as is shown in picture followed.
+    ![](image\Bar_8.png)
+### 4.3 Create Bar Chart
+In order to illustrate two graph in the same time we use dashboard.Click on the dashboard and drag sheets into intended plave and re-order until satisfied.
+    ![](image\Dashboard.png)
 
-Distill is a publication format for scientific and technical writing, native to the web.
+After satisfied click on **Server->Tableau Public->Save to Tableau Public...** 
+    ![](image\Dashboard_2.png)
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+## Task 5: Major observations
+* For Developing countries like China and Malaysia, usually have higher Export volume than Import Volume.
+* For Developed countries and regions like Japan and United States, usually the Export volume lower than Import Volume.
+* Hongkong is very interesting since it have a really high Trade Surplus, there could because Hong Kong is an channel for Chinese exports.
 
 
