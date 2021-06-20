@@ -17,31 +17,26 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ### Explore different perspectives and approaches to design more truthful and enlightening data visualisation
-
 ![](image\Makeover.jpg)
 
 ### Task 1:	Critic the data visualisation from both its clarity and aesthetics. At least three from each evaluation criterion.
 * clarity:
   * Title is not given: This graph did not occur with a title which is confusing when we try to understand the meaning and intention of the graph.
   *	Meaningless bubble colors: It is hard to distinguish exporters and importers, especially when one country have a relatively similar import and export column, for example it is hard for us to distinguish whether Japan falls in importers or Exporters.
-
-![](image\japan.png)
-  * 100% opacity and overlapping bubbles: when we observe the given bubble chart, we can see that some bubble are heavily overlapping and we are unable to see the white dot which indicate the location of bubble. It is because the size of bubbles is not adusted to a easy observe size and bubbles are of 100% opacity
+  ![](image\japan.png)
+  * 100% opacity and overlapping bubbles: when we observe the given bubble chart, we can see that some bubble are heavily overlapping and we are unable to see the white dot which indicate the location of bubble. It is because the size of bubbles is not adjusted to a easy observe size and bubbles are of 100% opacity
 
 ![](image\overlapping.png)
-
 * Aesthetics:
   * The scale of axis(for both imports and exports) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.
   * The number of axis are poorly labeled, we are unable to tell the unit of currency by only look at the axis
-
 ![](image\axis.png)
   * Although the given grapg is able to see the differnce from country to country, it is hard for us to see directly whether the actual geometry position of countries and how they influenced on the exports and imports
 
 
 ### Task 2:	With reference to the critics above, suggest alternative graphical presentation to improve the current design. Sketch out the proposed design. The proposed alternative design should include appropriate interactive techniques. Support your design by describing the advantages or which part of the issue(s) your alternative design try to overcome.
 The proposed design is sketched as picture below:
-
-![](image\sketch.jpg)
+  ![](image\sketch.jpg)
 
 * Design Introduction:
   * From the proposed design I proposed two charts, the first one is a bubble Chart which is able to help users to find order of the total import and export volume of each country in all countries over the years(which are able to adjusted by the slider bar on the upper right), a ranking of countries is calculated using the sum of Import and Export and will be presented in the tooltip. 
@@ -57,231 +52,5 @@ The proposed design is sketched as picture below:
 ### Task 3: Using Tableau, design the proposed data visualisation.
   ![](image\Tableau.png)
 
-### Task 4: Provide step-by-step description on how the data visualisation was prepared. (30 marks)
-* Preparing data:
-1. Open dataset in excel sheet
 
-![](image\open1.png)
 
-2.Rename the dataset as Import and Export.
-
-![](image\open2.png)
-
-3.Delete extra rows.
-
-![](image\deleting 1.png)
-![](image\deleting 2.png)
-![](image\deleting 3.png)
-
-4. Drag the file into tableau.
-
-![](image\import1.png)
-
-5.Drag Export to the upper right field and click on Use data Interpreter
-
-![](image\clean1.png)
-
-6.Choose the second column and slide to the end of table, press shift + click on last column to choose all intended columns, right click and choose Pivot to create a pivot chart
-
-![](image\clean2.png)
-![](image\clean3.png)
-
-7. For the pivot chart, right click on first column and choose Split
-
-![](image\clean4.png)
-
-8. Hide un-relative columns: Right click on column 1 and choose Hide
-
-![](image\clean5.png)
-
-9. Change column data type: Change data type by click on the “Abc” sign on top right of column. The data type will be Geographic Role->Country/Region, Date & Time, Number(decimal).
-
-![](image\clean6.png)
-
-10. Right click on column names and choose Rename, change the column names as Export Countries, Export Unit, Export Time and Export.
-
-![](image\clean7.png)
-
-11. Drag Imports to upper right field and repeat the steps of Pivot & Split & Hide irrelative columns & Change data type & Rename columns, note the new columns are named as Import countries & Import Unit & Import time & Import, the result shows as follows.
-
-![](image\clean8.png)
-
-12. Click on the link between Export and Import -> Add more field -> click on Export Time and Import Time 
-
-![](image\clean9.png)
-
-* Create Measures variables using calculation
-1. Click on Analysis -> Create Calculated Field… to create a new Measure names Trade gap
-
-![](image\calculation1.png)
-![](image\calculation2.png)
-
-2. Create another calculate field Export+Import to demonstrate the overall trade, also trade surplus and trade defict is calculated accordingly.
-
-![](image\calculation3.png)
-![](image\calculation4.png)
-![](image\calculation5.png)
-
-* Create Bubble Chart
-1. Drag the intended variables into destination part as is whow in the picture below
-
-![](image\bubble1.png)
-
-2. And for the export time in the filter, we choose Relative Date after dragging in and choose Range of Dates to select date range.
-
-![](image\bubble2.png)
-![](image\bubble3.png)
-
-3. After click on Apply->OK, we right click on Export Time and click on Show filter so we are able to get the slider bar which enable us to choose time range.
-
-![](image\bubble4.png)
-
-4. For the border and opacity of Bubbles, we click on color pan and choose 80% opacity, also choose which color for the bubble border
-
-![](image\bubble5.png)
-
-5. Click on the triangle on SUM(Trade gap) and choose Edit Colors..., Change the setting as picture shown below.
-
-![](image\bubble6.png)
-
-6. Right click on header choose Edit title..., change the title as following picture
-
-![](image\bubble7.png)
-
-7. Adding ticks by right click on both axis and choose Format, choose solid balck line for Ticks under Scale and for Number change into Currency(Standard)->Singapore.
-
-![](image\bubble8.png)
-
-8. Annotate the area by right click on chart area and choose Annotate->Area, we then mark the upper left area of the chart as Net Exporters in red and lower right area as Net Importers in Blue.
-
-![](image\bubble9.png)
-
-The finished graph will be as following picture:
-
-![](image\bubble10.png)
-
-9. Add ranking data in Tooltip and rearrange Tooltip illustration:
-Calculate the Rankindata using formula below.
-
-![](image\bubble11.png)
-
-Drag Ranking data to Tooltip, and right click on it, choose Compute Using-> Export Coutry
-
-![](image\bubble12.png)
-
-Rearange the Tooltip as the graph shown below:
-
-![](image\bubble13.png)
-
-the final outcome will be like:
-
-![](image\bubble14.png)
-
-
-* Animations: Click on Format->Animation..., switch the Workbook Default settings on left to On and change the Duration to 2 seconds
-
-
-![](image\Animation.png)
-
-* Geo
-1. Drag export country to empty space
-
-![](image\geo1.png)
-
-2. Drage Trade gap to color pan and click on the Efit color as is shown in the picture.
-![](image\geo2.png)
-
-The color edit steps should be as following picture:
-![](image\geo3.png)
-
-3.Drag Import and Export to Tooltip pan
-
-![](image\geo4.png)
-
-
-4. Noted that some countries are not recognized, so we click on Map -> Edit Locations…. Can see there are some countries/regions unrecongmized, so we change them manually.
-
-![](image\geo5.png)
-![](image\geo6.png)
-![](image\geo7.png)
-
-Type in those countries that not recongnized by system then click on ok.
-
-![](image\geo8.png)
-
-5.Drag trade surplus, trade defict and Export+Import to tooltip to demonstrate the number. Edit the tooltip after dragging as given picture.
-
-![](image\geo9.png)
-![](image\geo10.png)
-
-6. Drag Export time to filter and redone the same for bubble chart to create the filter for time period.
-
-![](image\geo11.png)
-
-7. Drag Import+Export to Size pan to demonstrate the overall merchandise bubbles:
-
-![](image\geo12.png)
-
-The outcome will be as following pictures, right click on '9 unknowns' and choose hide to hide the nine unknown countries.
-
-![](image\geo13.png)
-
-8. Edit the praph title as following pic:
-
-![](image\geo14.png)
-
-* Create dashboard:
-1. In order to choose the same time slot in the same time for both graph, we right click on the filter and choose Apply to Worksheet->Slected Worksheet.
-
-![](image\dashboard1.png)
-
-Choose Bubble and Geo Plot then click on Ok.
-![](image\dashboard2.png)
-
-2. Click on New Dashboard icon on lower right of tableau and Drag the intended plots into a newly created dashboard.
-
-3. Click on Show Dashboard Title and make the title of dashboard as 'DataVis Makeover 2'
-
-![](image\dashboard3.png)
-
-4. Rearrange the location of graphs and custom the size as following pictures:
-
-![](image\dashboard4.png)
-
-5. Click on use as filter to make the bubble so we can choose whichever bubble and shown in another graph
-
-![](image\dashboard5.png)
-
-* Save this to tableau public:
-1. Click on Server->Tableau Public->Save to Tableau Public As...
-
-![](image\pub1.png)
-2. Log into tableau public.
-![](image\pub2.png)
-3. Edit the title of publich before click on Ok.
-![](image\pub3.png)
-
-### Task 5	Describe three major observations revealed by the data visualisation prepared. 
-
-* Observation 1: For Singapore generally the import volume is greater than export volume. We can observe from the map chart that there are obviously more blue color than red. This actually makes sense since Singapore is a city country and jeavily based on foreign imports. 
-
-![](image\ob1.png)
-
-* Observation 2:For the Top 5 countries of overall merchandise ranking, we can also find out that most countries are having more exports except USA.During the last ten years, Mainland China is the country/region that have most import and export transactions with Singapore, followed by Malaysia, USA, Indonesia and Hong Kong.
-Also we can recognize that for countries which have larger Imports are useually developed countries which those have larger Export are usually developing countries.
-
-![](image\ob2-1.png)
-![](image\ob2-2.png)
-![](image\ob2-3.png)
-![](image\ob2-5.png)
-![](image\ob2-4.png)
-
-
-
-
-* Observation 3:Comparing to time period of  1995 to 2005, past ten years Singapore starting to have more export to more countries in the world, which indicate that in past two decades Sinapore is trying to achieve the transformation of the import-based economic development model has been very effective.
-It is noticeable that with time goes by, China grow very fast in both Import and Export volume, which fit the reality that China's economy has developed rapidly in the past two decades.
-Also for USA it seems that Singapore become its Net Importer in the past two decades. 
-
-![](image\ob3-1.png)
-![](image\ob3-2.png)
