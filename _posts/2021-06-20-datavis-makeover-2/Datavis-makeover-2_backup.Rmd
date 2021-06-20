@@ -308,13 +308,15 @@ Choose Bubble and Geo Plot then click on Ok.
 
 ### Task 5	Describe three major observations revealed by the data visualisation prepared. 
 
-* Observation 1: For Singapore generally the import volume is greater than export volume. We can observe from the map chart that there are obviously more blue color than red. This actually makes sense since Singapore is a city country and jeavily based on foreign imports. 
+* Observation 1: 
+ * For Singapore generally the import volume is greater than export volume. We can observe from the map chart that there are obviously more blue color than red. This actually makes sense since Singapore is a city country and heavily based on foreign imports. 
 
 ![](image\ob1.png)
 
-* Observation 2:For the Top 5 countries of overall merchandise ranking, we can also find out that most countries are having more exports except USA.During the last ten years, Mainland China is the country/region that have most import and export transactions with Singapore, followed by Malaysia, USA, Indonesia and Hong Kong.
+* Observation 2:
+ * For the Top 5 countries of overall merchandise ranking, we can also find out that most countries are having more exports except USA.During the last ten years, Mainland China is the country/region that have most import and export transactions with Singapore, followed by Malaysia, USA, Indonesia and Hong Kong.
 
-Also we can recognize that for countries which have larger Imports are useually developed countries which those have larger Export are usually developing countries.
+ * Also we can recognize that for countries which have larger Imports are useually developed countries which those have larger Export are usually developing countries.
 
 ![](image\ob2-1.png)
 
@@ -327,11 +329,12 @@ Also we can recognize that for countries which have larger Imports are useually 
 ![](image\ob2-4.png)
  
 
-* Observation 3:Comparing to time period of  1995 to 2005, past ten years Singapore starting to have more export to more countries in the world, which indicate that in past two decades Sinapore is trying to achieve the transformation of the import-based economic development model has been very effective.
+* Observation 3:
+ * Comparing to time period of  1995 to 2005, past ten years Singapore starting to have more export to more countries in the world, which indicate that in past two decades Sinapore is trying to achieve the transformation of the import-based economic development model has been very effective.
 
-It is noticeable that with time goes by, China grow very fast in both Import and Export volume, which fit the reality that China's economy has developed rapidly in the past two decades.
+ * It is noticeable that with time goes by, China grow very fast in both Import and Export volume, which fit the reality that China's economy has developed rapidly in the past two decades.
 
-Also for USA it seems that Singapore become its Net Importer in the past two decades. 
+ * Also for USA it seems that Singapore become its Net Importer in the past two decades. 
 
 ![](image\ob3-1.png)
 
