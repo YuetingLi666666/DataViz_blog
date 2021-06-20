@@ -30,13 +30,27 @@ knitr::opts_chunk$set(echo = TRUE)
 * Aesthetics:
   * The scale of axis(for both imports and exports) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.
   * The number of axis are poorly labeled, we are unable to tell the unit of currency by only look at the axis
-  * For countries with smaller imports and exports, the bubbles 
+![](image\axis.png)
+  * Although the given grapg is able to see the differnce from country to country, it is hard for us to see directly whether the actual geometry position of countries and how they influenced on the exports and imports
 
 
+### Task 2:	With reference to the critics above, suggest alternative graphical presentation to improve the current design. Sketch out the proposed design. The proposed alternative design should include appropriate interactive techniques. Support your design by describing the advantages or which part of the issue(s) your alternative design try to overcome.
+The proposed design is sketched as picture below:
+  ![](image\sketch.jpg)
+
+* Design Introduction:
+  * From the proposed design I proposed two charts, the first one is a bubble Chart which is able to help users to find order of the total import and export volume of each country in all countries over the years(which are able to adjusted by the slider bar on the upper right), a ranking of countries is calculated using the sum of Import and Export and will be presented in the tooltip. 
+
+  * The second chart is also a bubble chart but from a different perspective, it is a combination of bubble chart and a map, the Net Importers and Net Exporters are also separated using different colors, the tooltip will provide details of Import and Export data, users can manually adjust the Time scale and when users click on the country they are intended to find in either chart, the corresponding bubble will be highlighted in the other chart. Trade Surplus and Trade Deficit, and the total merchandise volume are also calculated and demonstrated using Tooltip.
+
+* Advantages:
+  * Flexibility: In this design, charts are manually adjustable, given that users may choose any time slots and any of countries.
+  * Clearance: Although it seems similar to the original chart, I did separate the Net Exporters and Net Importers using different color scale so we can tell clearly whether the countries are overall Net Importers or Net Exporters.
+  * Animation visualization: using animation, slider bar and filters we are able to get better interaction between user and the graph
 
 
-
-
+### Task 3: Using Tableau, design the proposed data visualisation.
+  ![](image\Tableau.png)
 
 
 

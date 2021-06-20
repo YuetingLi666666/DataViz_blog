@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Datavis-makeover-2_files/anchor-4.2.2/anchor.min.js","Datavis-makeover-2_files/bowser-1.9.3/bowser.min.js","Datavis-makeover-2_files/distill-2.2.21/template.v2.js","Datavis-makeover-2_files/figure-html5/pressure-1.png","Datavis-makeover-2_files/jquery-1.11.3/jquery.min.js","Datavis-makeover-2_files/popper-2.6.0/popper.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-light-border.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","Datavis-makeover-2_files/webcomponents-2.0.0/webcomponents.js","image/Makeover.jpg"]}
+  {"type":"character","attributes":{},"value":["Datavis-makeover-2_files/anchor-4.2.2/anchor.min.js","Datavis-makeover-2_files/bowser-1.9.3/bowser.min.js","Datavis-makeover-2_files/distill-2.2.21/template.v2.js","Datavis-makeover-2_files/figure-html5/pressure-1.png","Datavis-makeover-2_files/jquery-1.11.3/jquery.min.js","Datavis-makeover-2_files/popper-2.6.0/popper.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-light-border.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","Datavis-makeover-2_files/webcomponents-2.0.0/webcomponents.js","image/axis.png","image/japan.png","image/Makeover.jpg","image/overlapping.png","image/sketch.jpg","image/tableau.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1480,6 +1480,28 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h3 id="explore-different-perspectives-and-approaches-to-design-more-truthful-and-enlightening-data-visualisation">Explore different perspectives and approaches to design more truthful and enlightening data visualisation</h3>
 <p><img src="image/Makeover.jpg" /></p>
 <h3 id="task-1-critic-the-data-visualisation-from-both-its-clarity-and-aesthetics.-at-least-three-from-each-evaluation-criterion.">Task 1: Critic the data visualisation from both its clarity and aesthetics. At least three from each evaluation criterion.</h3>
+<ul>
+<li>clarity:
+<ul>
+<li>Title is not given: This graph did not occur with a title which is confusing when we try to understand the meaning and intention of the graph.</li>
+<li>Meaningless bubble colors: It is hard to distinguish exporters and importers, especially when one country have a relatively similar import and export column, for example it is hard for us to distinguish whether Japan falls in importers or Exporters. <img src="image/japan.png" /></li>
+<li>100% opacity and overlapping bubbles: when we observe the given bubble chart, we can see that some bubble are heavily overlapping and we are unable to see the white dot which indicate the location of bubble. It is because the size of bubbles is not adusted to a easy observe size and bubbles are of 100% opacity</li>
+</ul></li>
+</ul>
+<p><img src="image/overlapping.png" /> * Aesthetics: * The scale of axis(for both imports and exports) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious. * The number of axis are poorly labeled, we are unable to tell the unit of currency by only look at the axis <img src="image/axis.png" /> * Although the given grapg is able to see the differnce from country to country, it is hard for us to see directly whether the actual geometry position of countries and how they influenced on the exports and imports</p>
+<h3 id="task-2-with-reference-to-the-critics-above-suggest-alternative-graphical-presentation-to-improve-the-current-design.-sketch-out-the-proposed-design.-the-proposed-alternative-design-should-include-appropriate-interactive-techniques.-support-your-design-by-describing-the-advantages-or-which-part-of-the-issues-your-alternative-design-try-to-overcome.">Task 2: With reference to the critics above, suggest alternative graphical presentation to improve the current design. Sketch out the proposed design. The proposed alternative design should include appropriate interactive techniques. Support your design by describing the advantages or which part of the issue(s) your alternative design try to overcome.</h3>
+<p>The proposed design is sketched as picture below: <img src="image/sketch.jpg" /> * Design Introduction: * From the proposed design I proposed two charts, the first one is a bubble Chart which is able to help users to find order of the total import and export volume of each country in all countries over the years(which are able to adjusted by the slider bar on the upper right), a ranking of countries is calculated using the sum of Import and Export and will be presented in the tooltip.</p>
+<ul>
+<li><p>The second chart is also a bubble chart but from a different perspective, it is a combination of bubble chart and a map, the Net Importers and Net Exporters are also separated using different colors, the tooltip will provide details of Import and Export data, users can manually adjust the Time scale and when users click on the country they are intended to find in either chart, the corresponding bubble will be highlighted in the other chart. Trade Surplus and Trade Deficit, and the total merchandise volume are also calculated and demonstrated using Tooltip.</p></li>
+<li><p>Advantages:</p>
+<ul>
+<li>Flexibility: In this design, charts are manually adjustable, given that users may choose any time slots and any of countries.</li>
+<li>Clearance: Although it seems similar to the original chart, I did separate the Net Exporters and Net Importers using different color scale so we can tell clearly whether the countries are overall Net Importers or Net Exporters.</li>
+<li>Animation visualization: using animation, slider bar and filters we are able to get better interaction between user and the graph</li>
+</ul></li>
+</ul>
+<h3 id="task-3-using-tableau-design-the-proposed-data-visualisation.">Task 3: Using Tableau, design the proposed data visualisation.</h3>
+<p><img src="image/tableau.png" /></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
