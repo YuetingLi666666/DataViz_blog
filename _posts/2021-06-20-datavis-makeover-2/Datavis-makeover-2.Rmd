@@ -52,5 +52,75 @@ The proposed design is sketched as picture below:
 ### Task 3: Using Tableau, design the proposed data visualisation.
   ![](image\Tableau.png)
 
+### Task 4: Provide step-by-step description on how the data visualisation was prepared. (30 marks)
+* Preparing data:
+1. Open dataset in excel sheet
+![](image\open1.png)
+
+2.Rename the dataset as Import and Export.
+![](image\open2.png)
+
+3.Delete extra rows.
+![](image\deleting 1.png)
+![](image\deleting 2.png)
+![](image\deleting 3.png)
+
+4. Drag the file into tableau.
+![](image\import1.png)
+
+5.Drag Export to the upper right field and click on Use data Interpreter
+![](image\clean1.png)
+
+6.Choose the second column and slide to the end of table, press shift + click on last column to choose all intended columns, right click and choose Pivot to create a pivot chart
+![](image\clean2.png)
+![](image\clean3.png)
+
+7. For the pivot chart, right click on first column and choose Split
+![](image\clean4.png)
+
+8. Hide un-relative columns: Right click on column 1 and choose Hide
+![](image\clean5.png)
+
+9. Change column data type: Change data type by click on the “Abc” sign on top right of column. The data type will be Geographic Role->Country/Region, Date & Time, Number(decimal).
+![](image\clean6.png)
+
+10. Right click on column names and choose Rename, change the column names as Export Countries, Export Unit, Export Time and Export.
+![](image\clean7.png)
+
+11. Drag Imports to upper right field and repeat the steps of Pivot & Split & Hide irrelative columns & Change data type & Rename columns, note the new columns are named as Import countries & Import Unit & Import time & Import, the result shows as follows.
+![](image\clean8.png)
+
+12. Click on the link between Export and Import -> Add more field -> click on Export Time and Import Time 
+![](image\clean9.png)
+
+* Create Measures variables using calculation
+1. Click on Analysis -> Create Calculated Field… to create a new Measure names Trade gap
+![](image\calculation1.png)
+![](image\calculation2.png)
+
+2. Create another calculate field Export+Import to demonstrate the overall trade, also trade surplus and trade defict is calculated accordingly.
+![](image\calculation3.png)
+![](image\calculation4.png)
+![](image\calculation5.png)
+
+* Create Bubble Chart
+1. Drag the intended variables into destination part as is whow in the picture below
+![](image\bubble1.png)
+
+2. And for the export time in the filter, we choose Relative Date after dragging in and choose Range of Dates to select date range.
+![](image\bubble2.png)
+![](image\bubble3.png)
+
+3. After click on Apply->OK, we right click on Export Time and click on Show filter so we are able to get the slider bar which enable us to choose time range.
+![](image\bubble4.png)
+
+4. For the border and opacity of Bubbles, we click on color pan and choose 80% opacity, also choose which color for the bubble border
+![](image\bubble5.png)
+
+5.
+
+
+
+
 
 
