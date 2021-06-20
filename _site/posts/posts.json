@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-06-20-datavis-makeover-2/",
+    "title": "DataViz Makeover 2",
+    "description": "Explore different perspectives and approaches to design more truthful and enlightening data visualisation",
+    "author": [
+      {
+        "name": "Yueting Li",
+        "url": "https://linkedin.com/in/yueting-li-9ab569208"
+      }
+    ],
+    "date": "2021-06-20",
+    "categories": [],
+    "contents": "\r\nExplore different perspectives and approaches to design more truthful and enlightening data visualisation\r\n\r\nTask 1: Critic the data visualisation from both its clarity and aesthetics. At least three from each evaluation criterion.\r\n\r\n\r\n\r\n",
+    "preview": {},
+    "last_modified": "2021-06-20T10:52:37+08:00",
+    "input_file": "Datavis-makeover-2.knit.md"
+  },
+  {
     "path": "posts/2021-05-22-dataviz-makeover-1/",
     "title": "DataViz Makeover 1",
     "description": "A short description of the post.",
@@ -14,23 +31,6 @@
     "contents": "\r\nMaking over a chart from Merchandise Trade by Region/Market Data.\r\nExplore different perspectives and approaches to design more truthful and enlightening data visualisation\r\n\r\nTask 1: Critic the graph from both its clarity and aesthetics. At least three from each evaluation criterion.\r\nclarity:\r\nTitle is not precise: Given the title “Merchandise Trade of Top Six Trading Countries,2019-2020”, there is no clear explanation of what does “top” means, and How the ranking is given.\r\nGiven a large amount of countries and time scale over 30 years, only 3 years data is provided in the demonstration no further demonstration can be adopted.\r\nFor Import and Export of y-axis, the scale is not same for import and export which means in the given visualization, Import Volume and Export Volume cannot be compared with each other, also, for users it add difficulties to compare the difference of import and export patern between countries.\r\n\r\nAesthetics:\r\nChart title’s font size: Font size of title should be bigger than the commentary so readers will be easily distinguish the topic of charts\r\nArea chart might not be the most appropriate demonstration method: Although area chart is ideal for demonstrating the time series of Import and Export data, it doesn’t fit people’s thinking patterns of understanding the Import and export balance.In this case a Bar chart will be more adequate.\r\nThe time scale of the x-axis(Month of Period) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.\r\n\r\n\r\nTask 2: Alternative graphical presentation to improve the current design.\r\nThe proposed design is sketched as picture below: \r\nDesign Introduction:\r\nFrom the proposed design I proposed two charts, the first one is Pie Chart which is able to help users to find the percentage of the total import and export volume of each country in all countries over the years, a ranking of countries is calculated using the sum of Import and Export.Users are able to manually adjust time scale and select countries.\r\nThe second chart is a Bar chart provides details of Import and Export data, users can manually adjust the Time scale and countries that are intended to be compared. Trade Surplus and Trade Deficit are also calculated and demonstrated using Tooltip.\r\n\r\nAdvantages:\r\nFlexibility: In this design, charts are manually adjustable, given that users may choose any time slots and any combination of countries.\r\nEasiness to compare between countries.\r\nClear data details using Tolltip.\r\n\r\nTask 3: Data visualization designed using Tableau\r\n\r\nTask 4: Step-by-step description on data visualization preparation.\r\n4.1 Data preparation\r\nDrag the data file into tableau and drag T1 to table area  Tick Use data interpreter and choose import data from Jan 1976 to April 2021 and right click chose pivot.  Change variable names into “Year” ”Import”, and change data type of “Year” into Date; Drag T2 into data area and repeat same steps for T2, variable names are changed into “Year(T2)” and “Export”;\r\nClick on the connect line of T1 and T2, edit relation ships as picture shown: \r\nThe final outcome will be like:\r\n Calculate Trade Deficit and Trade Surplus using Analysis->Create Calculated field… \r\n4.2 Create Pie Chart\r\nIn the Marks card, select Pie from the drop down menu. Drag Export+Import Values to Size. Drag Countries Values to Color. \r\nDrag Year and Countries into Filter, right click on the Marks card and select Edit Filter  Drag a specific measure to Tooltip to the pie chart.Double click on tooltip and edit as following picture.  Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture  Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter. And the outcome will be as is shown in picture followed. \r\n4.3 Create Bar Chart\r\nDrag Year to Columns, drag Countries and Import to Rows  Drag Export to the right edge of Chart \r\nChange Marks into Bars and edit y-axis by right click on it, change the Scale to fixed for both Import and Export as is shown in picture.  Drag Year and Countries into filter and change the format of Year into Month fot both Year in column and in filter.  Drag Trade Surplus and Trade Deficit into Tooltip, double click on Tooltip and edit as following picture, note that change color of Surplus to blue and Deficit to red.  Edit both the Year and Countries Filters by right click on triangle on top right of the filter and set as in following picture  Edit the Font size of Chart Title by double click on title, Edit font size of filters by click on edit filter. Change the format of x-axis into solid and black lines to enable a better and clear view.Edit in Axis-> Scale-> Ticks and as is shown in picture below.  And the outcome will be as is shown in picture followed.  ### 4.3 Create Bar Chart In order to illustrate two graph in the same time we use dashboard.Click on the dashboard and drag sheets into intended plave and re-order until satisfied. \r\nAfter satisfied click on Server->Tableau Public->Save to Tableau Public… \r\nTask 5: Major observations\r\nFor Developing countries like China and Malaysia, usually have higher Export volume than Import Volume.\r\nFor Developed countries and regions like Japan and United States, usually the Export volume lower than Import Volume.\r\nHongkong is very interesting since it have a really high Trade Surplus, there could because Hong Kong is an channel for Chinese exports.\r\n\r\n\r\n\r\n",
     "preview": {},
     "last_modified": "2021-05-30T23:44:41+08:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2021-06-20-datavis-makeover-2/",
-    "title": "DataViz Makeover 2",
-    "description": "Explore different perspectives and approaches to design more truthful and enlightening data visualisation",
-    "author": [
-      {
-        "name": "Yueting Li",
-        "url": "https://linkedin.com/in/yueting-li-9ab569208"
-      }
-    ],
-    "date": "2021-05-22",
-    "categories": [],
-    "contents": "\r\nR Markdown\r\nThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\r\nWhen you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:\r\n\r\n\r\nsummary(cars)\r\n\r\n\r\n     speed           dist       \r\n Min.   : 4.0   Min.   :  2.00  \r\n 1st Qu.:12.0   1st Qu.: 26.00  \r\n Median :15.0   Median : 36.00  \r\n Mean   :15.4   Mean   : 42.98  \r\n 3rd Qu.:19.0   3rd Qu.: 56.00  \r\n Max.   :25.0   Max.   :120.00  \r\n\r\nIncluding Plots\r\nYou can also embed plots, for example:\r\n\r\n\r\n\r\nNote that the echo = FALSE parameter was added to the code chunk to prevent printing of the R code that generated the plot.\r\n\r\n\r\n\r\n",
-    "preview": "posts/2021-06-20-datavis-makeover-2/Datavis-makeover-2_files/figure-html5/pressure-1.png",
-    "last_modified": "2021-06-20T05:40:23+08:00",
     "input_file": {}
   }
 ]

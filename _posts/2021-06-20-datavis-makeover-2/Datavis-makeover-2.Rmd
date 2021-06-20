@@ -15,22 +15,28 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+### Explore different perspectives and approaches to design more truthful and enlightening data visualisation
+![](image\Makeover.jpg)
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+### Task 1:	Critic the data visualisation from both its clarity and aesthetics. At least three from each evaluation criterion.
+* clarity:
+  * Title is not given: This graph did not occur with a title which is confusing when we try to understand the meaning and intention of the graph.
+  *	Meaningless bubble colors: It is hard to distinguish exporters and importers, especially when one country have a relatively similar import and export column, for example it is hard for us to distinguish whether Japan falls in importers or Exporters.
+  ![](image\japan.png)
+  * 100% opacity and overlapping bubbles: when we observe the given bubble chart, we can see that some bubble are heavily overlapping and we are unable to see the white dot which indicate the location of bubble. It is because the size of bubbles is not adusted to a easy observe size and bubbles are of 100% opacity
 
-```{r cars}
-summary(cars)
-```
+![](image\overlapping.png)
+* Aesthetics:
+  * The scale of axis(for both imports and exports) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.
+  * The number of axis are poorly labeled, we are unable to tell the unit of currency by only look at the axis
+  * For countries with smaller imports and exports, the bubbles 
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+
