@@ -25,8 +25,8 @@ knitr::opts_chunk$set(echo = TRUE)
   *	Meaningless bubble colors: It is hard to distinguish exporters and importers, especially when one country have a relatively similar import and export column, for example it is hard for us to distinguish whether Japan falls in importers or Exporters.
   ![](image\japan.png)
   * 100% opacity and overlapping bubbles: when we observe the given bubble chart, we can see that some bubble are heavily overlapping and we are unable to see the white dot which indicate the location of bubble. It is because the size of bubbles is not adusted to a easy observe size and bubbles are of 100% opacity
-
 ![](image\overlapping.png)
+
 * Aesthetics:
   * The scale of axis(for both imports and exports) is not clear and cannot correspond to the actual value since scales ticks are not clear and obvious.
   * The number of axis are poorly labeled, we are unable to tell the unit of currency by only look at the axis
