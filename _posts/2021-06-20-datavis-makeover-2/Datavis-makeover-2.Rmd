@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 2"
 description: |
-  A short description of the post.
+  Explore different perspectives and approaches to design more truthful and enlightening data visualisation
 author:
   - name: Yueting Li
     url: https://linkedin.com/in/yueting-li-9ab569208
