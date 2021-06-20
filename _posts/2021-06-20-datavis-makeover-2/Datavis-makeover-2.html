@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["Datavis-makeover-2_files/anchor-4.2.2/anchor.min.js","Datavis-makeover-2_files/bowser-1.9.3/bowser.min.js","Datavis-makeover-2_files/distill-2.2.21/template.v2.js","Datavis-makeover-2_files/figure-html5/pressure-1.png","Datavis-makeover-2_files/jquery-1.11.3/jquery.min.js","Datavis-makeover-2_files/popper-2.6.0/popper.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-light-border.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","Datavis-makeover-2_files/webcomponents-2.0.0/webcomponents.js","image/axis.png","image/deleting 1.png","image/deleting 2.png","image/deleting 3.png","image/deleting 4.png","image/japan.png","image/Makeover.jpg","image/open1.png","image/open2.png","image/overlapping.png","image/sketch.jpg","image/tableau.png"]}
+  {"type":"character","attributes":{},"value":["Datavis-makeover-2_files/anchor-4.2.2/anchor.min.js","Datavis-makeover-2_files/bowser-1.9.3/bowser.min.js","Datavis-makeover-2_files/distill-2.2.21/template.v2.js","Datavis-makeover-2_files/figure-html5/pressure-1.png","Datavis-makeover-2_files/jquery-1.11.3/jquery.min.js","Datavis-makeover-2_files/popper-2.6.0/popper.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-bundle.umd.min.js","Datavis-makeover-2_files/tippy-6.2.7/tippy-light-border.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.css","Datavis-makeover-2_files/tippy-6.2.7/tippy.umd.min.js","Datavis-makeover-2_files/webcomponents-2.0.0/webcomponents.js","image/axis.png","image/bubble1.png","image/bubble2.png","image/bubble3.png","image/bubble4.png","image/bubble5.png","image/bubble6.png","image/calculation1.png","image/calculation2.png","image/calculation3.png","image/calculation4.png","image/calculation5.png","image/clean1.png","image/clean2.png","image/clean3.png","image/clean4.png","image/clean5.png","image/clean6.png","image/clean7.png","image/clean8.png","image/clean9.png","image/deleting 1.png","image/deleting 2.png","image/deleting 3.png","image/deleting 4.png","image/import1.png","image/japan.png","image/Makeover.jpg","image/open1.png","image/open2.png","image/overlapping.png","image/sketch.jpg","image/tableau.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1520,7 +1520,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ol>
 <p>2.Rename the dataset as Import and Export. <img src="image/open2.png" /></p>
 <p>3.Delete extra rows. <img src="image/deleting%201.png" /> <img src="image/deleting%202.png" /> <img src="image/deleting%203.png" /></p>
-<p><img src="image/deleting%204.png" /></p>
+<ol start="4" type="1">
+<li>Drag the file into tableau. <img src="image/import1.png" /></li>
+</ol>
+<p>5.Drag Export to the upper right field and click on Use data Interpreter <img src="image/clean1.png" /></p>
+<p>6.Choose the second column and slide to the end of table, press shift + click on last column to choose all intended columns, right click and choose Pivot to create a pivot chart <img src="image/clean2.png" /> <img src="image/clean3.png" /></p>
+<ol start="7" type="1">
+<li><p>For the pivot chart, right click on first column and choose Split <img src="image/clean4.png" /></p></li>
+<li><p>Hide un-relative columns: Right click on column 1 and choose Hide <img src="image/clean5.png" /></p></li>
+<li><p>Change column data type: Change data type by click on the “Abc” sign on top right of column. The data type will be Geographic Role-&gt;Country/Region, Date &amp; Time, Number(decimal). <img src="image/clean6.png" /></p></li>
+<li><p>Right click on column names and choose Rename, change the column names as Export Countries, Export Unit, Export Time and Export. <img src="image/clean7.png" /></p></li>
+<li><p>Drag Imports to upper right field and repeat the steps of Pivot &amp; Split &amp; Hide irrelative columns &amp; Change data type &amp; Rename columns, note the new columns are named as Import countries &amp; Import Unit &amp; Import time &amp; Import, the result shows as follows. <img src="image/clean8.png" /></p></li>
+<li><p>Click on the link between Export and Import -&gt; Add more field -&gt; click on Export Time and Import Time <img src="image/clean9.png" /></p></li>
+</ol>
+<ul>
+<li>Create Measures variables using calculation</li>
+</ul>
+<ol type="1">
+<li><p>Click on Analysis -&gt; Create Calculated Field… to create a new Measure names Trade gap <img src="image/calculation1.png" /> <img src="image/calculation2.png" /></p></li>
+<li><p>Create another calculate field Export+Import to demonstrate the overall trade, also trade surplus and trade defict is calculated accordingly. <img src="image/calculation3.png" /> <img src="image/calculation4.png" /> <img src="image/calculation5.png" /></p></li>
+</ol>
+<ul>
+<li>Create Bubble Chart</li>
+</ul>
+<ol type="1">
+<li><p>Drag the intended variables into destination part as is whow in the picture below <img src="image/bubble1.png" /></p></li>
+<li><p>And for the export time in the filter, we choose Relative Date after dragging in and choose Range of Dates to select date range. <img src="image/bubble2.png" /> <img src="image/bubble3.png" /></p></li>
+<li><p>After click on Apply-&gt;OK, we right click on Export Time and click on Show filter so we are able to get the slider bar which enable us to choose time range. <img src="image/bubble4.png" /></p></li>
+<li><p>For the border and opacity of Bubbles, we click on color pan and choose 80% opacity, also choose which color for the bubble border <img src="image/bubble5.png" /></p></li>
+<li></li>
+</ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
